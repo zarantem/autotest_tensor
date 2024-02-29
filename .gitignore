@@ -1,0 +1,7 @@
+.env
+venv
+*.db
+*.ini
+config/config.ini
+launch.json
+__pycache__
