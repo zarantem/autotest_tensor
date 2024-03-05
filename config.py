@@ -54,31 +54,20 @@ def get_url():
     return curl
 
 
+def get_custom_value(x):
+    value = f'//*[@id="container"]/div[1]/div/div[4]/div[2]/div[{x}]/a/div[1]/img'
+    return value
+
+
 def find_images():
-    width_photo_1 = browser.find_element(by=By.XPATH,
-                                         value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[1]/a/div[1]/img').get_attribute(
-        'width')
-    height_photo_1 = browser.find_element(by=By.XPATH,
-                                          value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[1]/a/div[1]/img').get_attribute(
-        'height')
-    width_photo_2 = browser.find_element(by=By.XPATH,
-                                         value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[2]/a/div[1]/img').get_attribute(
-        'width')
-    height_photo_2 = browser.find_element(by=By.XPATH,
-                                          value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[2]/a/div[1]/img').get_attribute(
-        'height')
-    width_photo_3 = browser.find_element(by=By.XPATH,
-                                         value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[3]/a/div[1]/img').get_attribute(
-        'width')
-    height_photo_3 = browser.find_element(by=By.XPATH,
-                                          value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[3]/a/div[1]/img').get_attribute(
-        'height')
-    width_photo_4 = browser.find_element(by=By.XPATH,
-                                         value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[4]/a/div[1]/img').get_attribute(
-        'width')
-    height_photo_4 = browser.find_element(by=By.XPATH,
-                                          value='//*[@id="container"]/div[1]/div/div[4]/div[2]/div[4]/a/div[1]/img').get_attribute(
-        'height')
+    width_photo_1 = browser.find_element(by=By.XPATH, value=get_custom_value(1)).get_attribute('width')
+    height_photo_1 = browser.find_element(by=By.XPATH, value=get_custom_value(1)).get_attribute('height')
+    width_photo_2 = browser.find_element(by=By.XPATH, value=get_custom_value(2)).get_attribute('width')
+    height_photo_2 = browser.find_element(by=By.XPATH, value=get_custom_value(2)).get_attribute('height')
+    width_photo_3 = browser.find_element(by=By.XPATH, value=get_custom_value(3)).get_attribute('width')
+    height_photo_3 = browser.find_element(by=By.XPATH, value=get_custom_value(3)).get_attribute('height')
+    width_photo_4 = browser.find_element(by=By.XPATH, value=get_custom_value(4)).get_attribute('width')
+    height_photo_4 = browser.find_element(by=By.XPATH, value=get_custom_value(4)).get_attribute('height')
     if width_photo_1 == width_photo_2 == width_photo_3 == width_photo_4 and height_photo_1 == height_photo_2 == height_photo_3 == height_photo_4:
         print(f'Всё хорошо, фото одного размера: {width_photo_1} x {height_photo_1}')
     else:

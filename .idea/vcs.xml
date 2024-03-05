@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tensor_autotests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test_fastapi_task" vcs="Git" />
   </component>
 </project>
